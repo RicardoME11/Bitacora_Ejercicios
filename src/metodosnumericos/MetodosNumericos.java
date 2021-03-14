@@ -23,28 +23,25 @@ public class MetodosNumericos {
            System.out.println();
            
            if (elec==1 || elec==2){
-               System.out.println("Ingrese el valor de la variable x");
-                   var=teclado.nextInt();
-                   System.out.println("Ingrese el valor del limite superior");
-                   lims=teclado.nextInt();
-                   System.out.println();
+               System.out.println("Ingrese el valor de la base");
+               var=teclado.nextInt();
+               System.out.println("Ingrese el valor del exponente");
+               lims=teclado.nextInt();
+               System.out.println();
+               double suma=0;
+
+               for(int x=0; x<lims+1; x++)
+               suma=suma+Math.pow(var,x)/(fac(x));
+               if (elec==1)
+                   System.out.println("El resultado es:"+suma);
+ 
+               else{
+                   double suma2;
+                   suma2=1/suma;
+                   System.out.println("El resultado es:"+suma2);
+               }
            }
            switch (elec){
-               case 1:
-                   double suma=0;
-                   
-                   for(int x=0; x<lims+1; x++)
-                       suma=suma+Math.pow(var,x)/(fac(x));
-                   System.out.println("El resultado es:"+suma);
-                   break;
-               
-               case 2:
-                   double suma2=0;
-                   for(int x=0;x<lims+1;x++)
-                       suma2=suma2+1/(Math.pow(var,x)/(fac(x)));
-                   System.out.println("El resultado es:"+suma2);
-                   break;
-               
                case 3:
                    boolean salir=false;
                    do{
